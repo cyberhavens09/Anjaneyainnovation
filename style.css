@@ -1,0 +1,370 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+transition:all 0.3s ease;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+body{
+background:linear-gradient(-45deg,#0f172a,#1e293b,#0f172a,#1e1b4b);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+color:white;
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ===== SOFT GLOW BACKGROUND CIRCLES ===== */
+body::before,
+body::after{
+content:"";
+position:fixed;
+width:400px;
+height:400px;
+border-radius:50%;
+filter:blur(120px);
+z-index:-1;
+}
+
+body::before{
+background:#38bdf8;
+top:-100px;
+left:-100px;
+}
+
+body::after{
+background:#6366f1;
+bottom:-100px;
+right:-100px;
+}
+
+/* ===== NAVBAR PREMIUM ===== */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(18px);
+position:fixed;
+width:100%;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+position:relative;
+}
+
+nav ul li a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+left:0;
+bottom:-6px;
+transition:0.4s;
+}
+
+nav ul li a:hover::after{
+width:100%;
+}
+
+/* ===== HERO ===== */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h2{
+font-size:60px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
+background-size:200%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:textMove 4s linear infinite;
+}
+
+@keyframes textMove{
+0%{background-position:0%;}
+100%{background-position:200%;}
+}
+
+.hero p{
+max-width:650px;
+margin-bottom:35px;
+opacity:0.9;
+font-size:19px;
+}
+
+.hero button{
+padding:15px 45px;
+border:none;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+color:white;
+font-weight:600;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(56,189,248,0.4);
+}
+
+.hero button:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(56,189,248,0.6);
+}
+
+/* ===== SERVICES ===== */
+.services{
+padding:140px 80px;
+text-align:center;
+}
+
+.services h2{
+font-size:42px;
+margin-bottom:80px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+gap:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.07);
+padding:40px;
+border-radius:30px;
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-15px) scale(1.05);
+box-shadow:0 25px 50px rgba(0,0,0,0.4);
+background:linear-gradient(135deg,#38bdf8,#6366f1);
+}
+
+/* ===== TEAM ===== */
+.team{
+padding:140px 80px;
+text-align:center;
+}
+
+.team h2{
+font-size:42px;
+margin-bottom:80px;
+}
+
+.member-card{
+background:rgba(255,255,255,0.07);
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.member-card img{
+width:100%;
+height:330px;
+object-fit:cover;
+}
+
+.member-card:hover{
+transform:translateY(-12px) scale(1.03);
+}
+
+/* ===== CONTACT ===== */
+.contact{
+padding:140px 80px;
+text-align:center;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+max-width:600px;
+padding:16px;
+margin:14px auto;
+border-radius:14px;
+border:none;
+background:rgba(255,255,255,0.08);
+color:white;
+display:block;
+backdrop-filter:blur(10px);
+}
+
+.contact button{
+padding:14px 40px;
+border:none;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+color:white;
+border-radius:40px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(56,189,248,0.4);
+}
+
+.contact button:hover{
+transform:translateY(-5px);
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:30px;
+background:rgba(0,0,0,0.7);
+color:#aaa;
+font-size:14px;
+}
+
+/* ===== FOUNDER SECTION  haata doge to v fark nahi padega ga iske niche ka===== */
+.founder{
+padding:140px 80px;
+text-align:center;
+}
+
+.founder-box{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+background:rgba(255,255,255,0.06);
+padding:50px;
+border-radius:30px;
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.founder-box img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+.founder-box h3{
+font-size:26px;
+margin-bottom:15px;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* ===== VISION & MISSION ===== */
+.vision{
+padding:140px 80px;
+text-align:center;
+}
+
+.vision-container{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.vision-card{
+width:320px;
+padding:40px;
+border-radius:30px;
+background:rgba(255,255,255,0.07);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+transition:0.4s;
+}
+
+.vision-card:hover{
+transform:translateY(-15px) scale(1.05);
+background:linear-gradient(135deg,#38bdf8,#6366f1);
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+padding:140px 80px;
+text-align:center;
+}
+
+.gallery-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.gallery-container img{
+width:100%;
+height:230px;
+object-fit:cover;
+border-radius:25px;
+transition:0.4s;
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+.gallery-container img:hover{
+transform:scale(1.08);
+}
+
+/* ===== INTERNSHIP ===== */
+.internship{
+padding:140px 80px;
+text-align:center;
+}
+
+.internship form{
+max-width:600px;
+margin:auto;
+background:rgba(255,255,255,0.06);
+padding:50px;
+border-radius:30px;
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.internship input,
+.internship textarea{
+width:100%;
+padding:16px;
+margin:15px 0;
+border-radius:14px;
+border:none;
+background:rgba(255,255,255,0.08);
+color:white;
+}
+
+.internship button{
+padding:14px 40px;
+border:none;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+color:white;
+border-radius:40px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(56,189,248,0.4);
+}
+
+.internship button:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(56,189,248,0.6);
+}

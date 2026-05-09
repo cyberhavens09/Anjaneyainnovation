@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANJANEYA INNOVATIONS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+scroll-behavior:smooth;
+}
+
+/* Navbar */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+position:fixed;
+width:100%;
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:40px;
+height:40px;
+object-fit:contain;
+}
+
+.logo span{
+color:#38bdf8;
+font-weight:600;
+font-size:20px;
+animation:logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+from{ text-shadow:0 0 10px #38bdf8; }
+to{ text-shadow:0 0 25px #38bdf8; }
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+/* Hero */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero h2{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
+max-width:600px;
+margin-bottom:30px;
+opacity:0.8;
+}
+
+.hero button{
+padding:12px 30px;
+border:none;
+background:#38bdf8;
+color:black;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+background:white;
+}
+
+/* Services */
+.services{
+padding:100px 80px;
+background:#111827;
+text-align:center;
+}
+
+.services h2{
+margin-bottom:60px;
+font-size:36px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#38bdf8;
+color:black;
+}
+
+/* Team */
+.team{
+padding:100px 80px;
+text-align:center;
+background:#0f172a;
+}
+
+.team h2{
+margin-bottom:60px;
+font-size:36px;
+}
+
+.team-members{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.member-card{
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+transition:0.4s;
+text-align:center;
+}
+
+.member-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+display:block;
+}
+
+.member-card h3{
+margin-top:15px;
+}
+
+.member-card p{
+margin-bottom:20px;
+opacity:0.8;
+}
+
+.member-card:hover{
+transform:translateY(-10px);
+}
+
+/* Contact */
+.contact{
+padding:100px 80px;
+background:#111827;
+text-align:center;
+}
+
+.contact input, .contact textarea{
+width:100%;
+max-width:500px;
+padding:12px;
+margin:10px auto;
+border-radius:10px;
+border:none;
+display:block;
+}
+
+.contact button{
+padding:10px 25px;
+border:none;
+background:#38bdf8;
+border-radius:20px;
+cursor:pointer;
+}
+
+/* Footer */
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+color:#aaa;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:1000;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">
+<img src="images/logo.png" alt="Company Logo">
+<span>ANJANEYA INNOVATIONS</span>
+</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#team">Team</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" data-aos="fade-up">
+<h2>We Build <span>Powerful Digital Solutions</span></h2>
+<p>Modern Web Development, Cyber Security and IT Solutions.</p>
+<button>Get Started</button>
+</section>
+
+<section class="services" id="services" data-aos="fade-up">
+<h2>Our Services</h2>
+<div class="cards">
+<div class="card"><h3>Web Development</h3><p>Responsive & modern websites.</p></div>
+<div class="card"><h3>Cyber Security</h3><p>Secure digital infrastructure.</p></div>
+<div class="card"><h3>Software Solutions</h3><p>Custom business software.</p></div>
+</div>
+</section>
+
+<section class="team" id="team" data-aos="zoom-in">
+<h2>Our Team</h2>
+<div class="team-members">
+
+<div class="member-card">
+<img src="images/harsh.jpg">
+<h3>Harsh Nishant</h3>
+<p>Web Developer</p>
+</div>
+
+<div class="member-card">
+<img src="images/deepu.jpg">
+<h3>Deepu Kumar</h3>
+<p>Backend Developer</p>
+</div>
+
+<div class="member-card">
+<img src="images/shivam.jpg">
+<h3>Shivam Kumar</h3>
+<p>Lead Developer</p>
+</div>
+
+<div class="member-card">
+<img src="images/shubham.jpg">
+<h3>Shubham Kumar</h3>
+<p>UI/UX Designer</p>
+</div>
+
+<div class="member-card">
+<img src="images/vinayak.jpg">
+<h3>Vinayak Kumar</h3>
+<p>Marketing Head</p>
+</div>
+
+<div class="member-card">
+<img src="images/pawan.jpg">
+<h3>Pawan Kumar</h3>
+<p>Security Analyst</p>
+</div>
+
+<div class="member-card">
+<img src="images/avinash.jpg">
+<h3>Avinash Kumar</h3>
+<p>Operations Manager</p>
+</div>
+
+<div class="member-card">
+<img src="images/raunak.jpg">
+<h3>Raunak Kumar</h3>
+<p>Financial Manager</p>
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact" data-aos="fade-up">
+<h2>Contact Us</h2>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="4" placeholder="Your Message"></textarea>
+<button>Send Message</button>
+</section>
+
+<footer>
+© 2026 ANJANEYA INNOVATIONS | All Rights Reserved
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/919876543210?text=Hello%20ANJANEYA%20INNOVATIONS" 
+class="whatsapp-float" 
+target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="55">
+</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+duration:1200,
+once:true
+});
+</script>
+
+</body>
+</html>
